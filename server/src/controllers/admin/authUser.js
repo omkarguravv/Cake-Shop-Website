@@ -1,6 +1,6 @@
-const User = require('../models/user')
+const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
-const user = require('../models/user')
+// const user = require('../models/user')
 
 
 //Signup and Authentication
@@ -8,7 +8,7 @@ exports.signup = (req, res) => {
     User.findOne({ userEmail: req.body.userEmail })
         .exec((error, user) => {
             if (user) return res.status(400).json({
-                message: 'User Already Registered'
+                message: 'Admin Already Registered'
             })
 
             //array destructuring
@@ -25,6 +25,7 @@ exports.signup = (req, res) => {
                 userEmail,
                 password,
                 userName: Math.random().toString(),
+                role : 'admin'
             });
 
             _user.save((error, data) => {
@@ -36,7 +37,7 @@ exports.signup = (req, res) => {
 
                 if (data) {
                     return res.status(201).json({
-                        message: 'User created '
+                        message: 'Admin created '
                     })
                 }
             })
@@ -52,7 +53,7 @@ exports.signin = (req, res) => {
         .exec((error, user) => {
             if (error) return res.status(400).json({ error })
             if (user) {
-                if (user.authenticate(req.body.password)) {
+                if (user.authenticate(req.body.password) && user.role === 'admin') {
                     
                     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' })
                     const { firstName, lastName, userEmail, role, fullName } = user;
