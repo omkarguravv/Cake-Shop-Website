@@ -3,8 +3,8 @@
 //IMPORT MODULES
 const express = require('express');
 const mongoose = require('mongoose');
-const morgan = require('morgan');
-const cors = require('cors');
+// const morgan = require('morgan');
+// const cors = require('cors');
 const bodyParser = require('body-parser');
 require("dotenv").config();
 
@@ -28,7 +28,8 @@ mongoose
 
 //MIDDLEWARE
 // app.use(morgan("dev"));
-app.use(cors({ origin: true, credentials: true }))
+// app.use(cors({ origin: true, credentials: true }))
+
 app.use(bodyParser());
 // app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -40,7 +41,9 @@ const testRoutes = require('./src/routes/test')
 app.use('/', testRoutes);
 
 const userRoutes = require('./src/routes/authUser')
+const adminRoutes = require('./src/routes/admin/authUser')
 app.use('/api',userRoutes)
+app.use('/api',adminRoutes)
 
 // PORT 
 const port = process.env.PORT || 8080;
