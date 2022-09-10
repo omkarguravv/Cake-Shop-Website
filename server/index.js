@@ -39,7 +39,7 @@ app.use(bodyParser());
 const testRoutes = require('./src/routes/test')
 app.use('/', testRoutes);
 
-const userRoutes = require('./src/routes/user')
+const userRoutes = require('./src/routes/authUser')
 app.use('/api',userRoutes)
 
 // PORT 
