@@ -3,6 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import { Client } from './client/Client';
 import About from './client/pages/About';
 import { Homepage } from './client/pages/Homepage';
+import {Signup} from './client/pages/Signup'
+import {Signin} from './client/pages/Signin'
+
+
 
 
 
@@ -17,11 +21,16 @@ function App() {
 
           <Route index element={<Homepage />} />
           <Route path='about' element={<About />} />
+          <Route path='signup' element={<Signup />} />
+          <Route path='signin' element={<Signin />} />
 
         </Route>
 
 
       </Routes>
+
+
+      
 
     </>
   );

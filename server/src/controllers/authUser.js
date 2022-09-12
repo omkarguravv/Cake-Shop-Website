@@ -1,6 +1,6 @@
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
-const user = require('../models/user')
+
 
 
 //Signup and Authentication
@@ -12,20 +12,15 @@ exports.signup = (req, res) => {
             })
 
             //array destructuring
-            const {
-                firstName,
-                lastName,
-                userEmail,
-                password,
-            } = req.body
 
             const _user = new User({
-                firstName,
-                lastName,
-                userEmail,
-                password,
+                firstName: req.body.firstName,
+                lastName:req.body.lastName,
+                userEmail: req.body.userEmail,
+                password:req.body.password,
                 userName: Math.random().toString(),
-            });
+            })
+            
 
             _user.save((error, data) => {
                 if (error) {

@@ -5,6 +5,9 @@ import { GiCupcake } from 'react-icons/gi'
 import { HiOutlineViewList } from 'react-icons/hi'
 import { MdClose } from "react-icons/md"
 
+import {Link} from 'react-router-dom'
+
+
 const Navbar = () => {
     let Links = [
         { name: "home", link: "/" },
@@ -42,7 +45,7 @@ const Navbar = () => {
                                 </li>
                             ))
                         }
-                        <Button name='SignIn' />
+                        <Link to='/signup' ><Button name='SignIn' /></Link>
 
 
 
@@ -58,7 +61,8 @@ const Navbar = () => {
                                 </li>
                             ))
                         }
-                        <Button name='SignIn' />
+                        <Link to='/signup' ><Button name='SignIn' /></Link>
+                        
 
 
 

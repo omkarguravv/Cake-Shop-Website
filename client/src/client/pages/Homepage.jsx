@@ -17,7 +17,7 @@ export const Homepage = () => {
             <div>
               <h3 className='font-extrabold text-4xl ' >Delicious cakes to order</h3>
               <p className='py-3 text-sm'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad quas nihil obcaecati!</p>
-              <Button name='Choose Cake'/>
+              <Button name='Choose Cake' />
 
             </div>
 
@@ -31,6 +31,7 @@ export const Homepage = () => {
       </div>
 
     </>
+
   )
 }
 
