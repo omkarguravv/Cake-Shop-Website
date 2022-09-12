@@ -4,7 +4,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 // const morgan = require('morgan');
-// const cors = require('cors');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 require("dotenv").config();
 
@@ -27,6 +27,7 @@ mongoose
     })
 
 //MIDDLEWARE
+app.use(cors())
 // app.use(morgan("dev"));
 // app.use(cors({ origin: true, credentials: true }))
 
@@ -41,7 +42,7 @@ const testRoutes = require('./src/routes/test')
 app.use('/', testRoutes);
 
 const userRoutes = require('./src/routes/authUser')
-const adminRoutes = require('./src/routes/admin/authUser')
+const adminRoutes = require('./src/routes/admin/authAdmin')
 app.use('/api',userRoutes)
 app.use('/api',adminRoutes)
 
