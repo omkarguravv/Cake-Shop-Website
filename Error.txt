@@ -1,6 +1,6 @@
 1) signup error while entering repeat mail  ✔
 
-
+bg-gradient-to-br from-blue-600 to-blue-100
 
 tailwind default
 div 1 w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white
