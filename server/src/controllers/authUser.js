@@ -15,12 +15,12 @@ exports.signup = (req, res) => {
 
             const _user = new User({
                 firstName: req.body.firstName,
-                lastName:req.body.lastName,
+                lastName: req.body.lastName,
                 userEmail: req.body.userEmail,
-                password:req.body.password,
+                password: req.body.password,
                 userName: Math.random().toString(),
             })
-            
+
 
             _user.save((error, data) => {
                 if (error) {
@@ -31,7 +31,7 @@ exports.signup = (req, res) => {
 
                 if (data) {
                     return res.status(201).json({
-                        message: 'User created '
+                        message: 'Registration Done'
                     })
                 }
             })
@@ -48,7 +48,7 @@ exports.signin = (req, res) => {
             if (error) return res.status(400).json({ error })
             if (user) {
                 if (user.authenticate(req.body.password)) {
-                    
+
                     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' })
                     const { firstName, lastName, userEmail, role, fullName } = user;
                     res.status(200).json({
@@ -57,11 +57,11 @@ exports.signin = (req, res) => {
                             firstName, lastName, userEmail, role, fullName
                         }
                     })
-                    
-                }else{
-                    
+
+                } else {
+
                     return res.status(200).json({
-                        message : "Invalid Password"
+                        message: "Invalid Password"
                     })
                 }
             }
