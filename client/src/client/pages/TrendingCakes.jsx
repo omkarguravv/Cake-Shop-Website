@@ -9,7 +9,7 @@ export const TrendingCakes = () => {
                 <div className='max-w-screen-lg  mx-auto  justify-center w-full h-full '>
 
                     <div className='text-center font-custom md:text-4xl text-2xl md:py-4 '>Trending Cakes</div>
-                    <div className='md:px-6 grid  sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-y-4    gap-x-12 px-12  sm:px-0 ' >
+                    <div className='md:px-6 grid  sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-y-4 gap-x-12 px-12  sm:px-0 ' >
 
                         {TrendingCakesData1.map(data => {
                             return (
