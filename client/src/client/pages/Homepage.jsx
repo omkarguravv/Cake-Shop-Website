@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Landing from './Landing'
-
+import Designer from './Designer'
 import { TrendingCakes } from './TrendingCakes'
 
 export const Homepage = () => {
@@ -10,7 +10,7 @@ export const Homepage = () => {
       <Navbar />
       <Landing />
 
-
+      {/* <Designer/> */}
       <TrendingCakes />
     </>
   )
