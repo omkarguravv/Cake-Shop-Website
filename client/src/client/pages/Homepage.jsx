@@ -10,7 +10,7 @@ export const Homepage = () => {
       <Navbar />
       <Landing />
 
-      {/* <Designer/> */}
+      <Designer/>
       <TrendingCakes />
     </>
   )
