@@ -31,18 +31,17 @@ app.use(cors())
 // app.use(morgan("dev"));
 // app.use(cors({ origin: true, credentials: true }))
 
-app.use(bodyParser());
-// app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(express.json())
 
 
 
 //ROUTES
 const testRoutes = require('./src/routes/test')
 app.use('/', testRoutes);
-
+const categoryRoutes = require('./src/routes/category')
 const userRoutes = require('./src/routes/authUser')
 const adminRoutes = require('./src/routes/admin/authAdmin')
+app.use('/api',categoryRoutes)
 app.use('/api',userRoutes)
 app.use('/api',adminRoutes)
 
