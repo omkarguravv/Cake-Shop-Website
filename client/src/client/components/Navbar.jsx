@@ -38,7 +38,7 @@ const Navbar = () => {
 
                     </div>
 
-                    <ul className={`flex items-center justify-center flex-col
+                    <ul className={`md:hidden flex items-center justify-center flex-col
                       bg-[#e7e7ef] text-center font-bold  
                         absolute h-screen   z-[-1] left-0 w-full transition-all duration-1000  ease-in ${open ? 'top-1   ' : 'top-[-830px]'}`}>
                         {
@@ -48,14 +48,14 @@ const Navbar = () => {
                                 </li>
                             ))
                         }
-                        <Link to='/signin' ><Button name='SignIn' /></Link>
+                        <Link to='/signup' ><Button name='SignUp' /></Link>
 
 
 
                     </ul>
 
                     <ul className={` hidden md:flex md:items-center 
-                     md:from-blue-500 md:to-blue-100
+                     
                        md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1]  md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in `}>
                         {
                             Links.map((link) => (
@@ -64,12 +64,14 @@ const Navbar = () => {
                                 </li>
                             ))
                         }
-                        <Link to='/signup' ><Button name='SignIn' /></Link>
+                        <Link to='/signup' ><Button name='SignUp' /></Link>
 
 
 
 
                     </ul>
+
+                   
                 </div>
             </div>
 
