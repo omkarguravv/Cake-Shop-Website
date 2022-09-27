@@ -4,8 +4,10 @@ import TrendingCakesData1 from '../../Data/TrendingCakeData.json'
 export const TrendingCakes = () => {
 
     return (
-        <>
-             <div className='w-full h-screen bg-gradient[#FFFF] text-black mt-16 md:mt-0 '>
+        <><div className='my-56   '>
+
+        
+             <div className='w-full h-screen bg-gradient[#FFFF] text-black mt-16 md:mt-0   '>
                 <div className='max-w-screen-lg  mx-auto flex flex-col justify-center w-full h-full '>
                     <div className="text-center text-3xl md:text-4xl my-10 font-custom "><h1>Trending Cake</h1></div>
                     <div className="grid gap-10 grid-cols-2 lg:grid-cols-4 md:grid-cols-3 px-4 ">
@@ -20,6 +22,7 @@ export const TrendingCakes = () => {
                     </div>
 
                 </div>
+            </div>
             </div>
         </>
     )
