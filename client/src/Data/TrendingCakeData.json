@@ -1,29 +1,39 @@
 [
-		{
-			"id": 1,
-            "src":"https://media.bakingo.com/Bomb%20cake02_0.jpg",
-			"name": "Bomb Cake"
-		},
-		{
-			"id": 2,
-			"name": "Half Cakes",
-            "src":"https://media.bakingo.com/half_cake_card_image.jpg?tr=w-184,dpr-1.5,q-70"
-			
-		},
-		{
-			"id": 3,
-			"name": "Pinata Cakes",
-            "src":"https://media.bakingo.com/Pinata%20Cake.jpg"
-		},
-		{
-			"id": 4,
-			"name": "Pull me Up Cakes",
-            "src":"https://media.bakingo.com/Pull%20me%20up%20Cake_0.jpg"
-		},
-		{
-			"id": 5,
-			"name": "Cake Surprise Box",
-            "src":"https://media.bakingo.com/Surprise%20cake%20box.jpg"
+	{
+		"id": 1,
+		"src": "https://media.bakingo.com/Bomb%20cake02_0.jpg",
+		"name": "Bomb Cake",
+		"productDetails": {
+			"star": "4.9",
+			"currentPrice": 499,
+			"strikeThroughPrice": 799,
+			"cakeWeight": [
+				0.5,
+				1,
+				1.5,
+				2
+			],
+			"productDescription": "The heavenly taste of this Choco Truffle Cake will even leave the hardest-to-please chocolate addicts tranquil in every sense. Prepared with three layers of relishing chocolate cream filled in between the soft stacks of chocolate cake, and adorned with beautiful chocolate icing and rich glaze chocolate coating, this one is just irresistible."
 		}
-	]
-		
+	},
+	{
+		"id": 2,
+		"name": "Half Cakes",
+		"src": "https://media.bakingo.com/half_cake_card_image.jpg?tr=w-184,dpr-1.5,q-70"
+	},
+	{
+		"id": 3,
+		"name": "Pinata Cakes",
+		"src": "https://media.bakingo.com/Pinata%20Cake.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Pull me Up Cakes",
+		"src": "https://media.bakingo.com/Pull%20me%20up%20Cake_0.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Cake Surprise Box",
+		"src": "https://media.bakingo.com/Surprise%20cake%20box.jpg"
+	}
+]

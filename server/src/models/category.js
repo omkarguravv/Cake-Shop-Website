@@ -3,22 +3,22 @@ const mongoose = require('mongoose');
 const categorySchema = mongoose.Schema({
 
     name: {
-        type : String,
+        type: String,
         required: true,
-        trim : true
+        trim: true
     },
-    slug : {
+    slug: {
         type: String,
         required: true,
         unique: true
     },
-    flavour : {
-        type:String
+    flavour: {
+        type: String
     },
-    parentID : {
+    parentID: {
         type: String
     }
 
-} , {timestamps : true});
+}, { timestamps: true });
 
-module.exports = mongoose.model('Category',categorySchema);
+module.exports = mongoose.model('Category', categorySchema);

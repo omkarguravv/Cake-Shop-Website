@@ -7,6 +7,7 @@ export const Client = () => {
             {/* Header  */}
             {/* nav bar on each page */}
             {/* contetnt as outlet */}
+            
             <Outlet/>
             {/* footer */}
             {/* footer on each page */}

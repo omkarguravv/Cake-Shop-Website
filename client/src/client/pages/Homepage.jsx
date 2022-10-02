@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Landing from './Landing'
 import Designer from './Designer'
 import { TrendingCakes } from './TrendingCakes'
+import ProductDetail from './ProductDetail'
 
 export const Homepage = () => {
   return (
