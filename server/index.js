@@ -41,6 +41,8 @@ app.use('/', testRoutes);
 const categoryRoutes = require('./src/routes/category')
 const userRoutes = require('./src/routes/authUser')
 const adminRoutes = require('./src/routes/admin/authAdmin')
+const ProductRoutes = require('./src/routes/product')
+app.use("/api",ProductRoutes)
 app.use('/api',categoryRoutes)
 app.use('/api',userRoutes)
 app.use('/api',adminRoutes)
