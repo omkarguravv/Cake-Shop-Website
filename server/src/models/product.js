@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
     },
     slug: { 
         type: String, 
-        required: true, 
+        required: true,
         unique: true 
     },
     price: { 
@@ -17,6 +17,9 @@ const productSchema = new mongoose.Schema({
     quantity: {
         type: Number,
         required: true
+    },
+    flavour:{
+        type:String
     },
     description: {
         type: String,

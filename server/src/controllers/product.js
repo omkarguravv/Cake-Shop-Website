@@ -1,7 +1,7 @@
 const slugify = require("slugify");
 const Product = require("../models/product")
 exports.createProduct = (req, res) => {
-  const { name, price, description, category, quantity } = req.body;
+  const { name, price, description, category, quantity,flavour } = req.body;
 
   let ProductImage = [];
 
@@ -16,6 +16,7 @@ exports.createProduct = (req, res) => {
     price,
     description,
     ProductImage,
+    flavour,
     quantity,
     category
   });
