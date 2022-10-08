@@ -1,4 +1,6 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+
 
 export const Admin = () => {
     return (
@@ -6,6 +8,7 @@ export const Admin = () => {
             {/* Header 
             contetnt as outlet
             footer */}
+            <Outlet/>
 
         </div>
     )
