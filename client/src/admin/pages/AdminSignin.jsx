@@ -1,20 +1,39 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { login } from '../actions/AdminIndexAction'
-import { useDispatch } from 'react-redux'
+import { isUserLoggedIn, login } from '../actions/AdminIndexAction'
+import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 
 function AdminSignin() {
+
+    const [userEmail, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setErrors] = useState('');
+
+    const auth = useSelector(state => state.auth);
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (!auth.authenticate) {
+            dispatch(isUserLoggedIn())
+        }
+    }, []);
 
     const adminLogin = (e) => {
         e.preventDefault();
         const user = {
-            email: 'o@123',
-            password: '1234'
+            userEmail, password
         }
         dispatch(login(user));
+    }
+
+    if (auth.authenticate) {
+        return <Navigate to={'/admin'} />
     }
 
 
@@ -33,19 +52,32 @@ function AdminSignin() {
                     <form
                         onSubmit={adminLogin}
                         className="mt-8 space-y-6"
-                        action="#"
-                    // method="POST"
+                        // action="#"
+                        method="POST"
                     >
 
                         <input type="hidden" name="remember" value="true" />
                         <div className="-space-y-px rounded-md shadow-sm">
                             <div>
                                 <label htmlFor="email-address1" className="sr-only">Email address</label>
-                                <input id="email-address" name="email" type="email" autoComplete="email" className=" relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm" placeholder="Email address" />
+                                <input
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={userEmail}
+                                    id="email-address"
+                                    name="email"
+                                    type="email"
+                                    placeholder="Email address"
+                                    autoComplete="email"
+                                    className=" relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm" />
                             </div>
                             <div className='py-4'>
                                 <label htmlFor="password" className="sr-only">Password</label>
-                                <input id="password" name="password" type="password" autoComplete="current-password" className=" relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm" placeholder="Password" />
+                                <input
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    placeholder="Password" autoComplete="current-password" className=" relative block w-full appearance-none  rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm" />
                             </div>
                         </div>
 

@@ -11,9 +11,11 @@ import Cart from './client/pages/Cart';
 import AdminHomePage from './admin/pages/AdminHomePage';
 import AdminSignin from './admin/pages/AdminSignin';
 import AdminSignup from './admin/pages/AdminSignup';
+import PrivateRoute from '../src/admin/pages/HOC/PrivateRoute'
 function App() {
   return (
     <>
+
       <Routes>
 
         {/* Front-end Routes */}
@@ -27,15 +29,19 @@ function App() {
           <Route path='cart' element={<Cart />} />
         </Route>
 
-        <Route path='/admin' element={<Admin />}>
 
-          <Route index element={<AdminHomePage />} />
-          <Route path='/admin/signin' element={<AdminSignin />} />
-          <Route path='/admin/signup' element={<AdminSignup />} />
-          {/* <Route path='signin' element={<Signin />} />
-          <Route path='cake' element={<ProductDetail/>} />
-          <Route path='cart' element={<Cart/>} /> */}
+
+        {/* <Route path='/admin' element={<Admin />}> */}
+        {/* <Route path='/admin' element={<PrivateRoute  />}> */}
+        <Route path='/admin/*' element={<PrivateRoute component={Admin} />}>
+
+
         </Route>
+          <Route path='/admin/signin' element={<AdminSignin />} />
+          <Route path='/admin' element={<AdminHomePage />} />
+          <Route path='/admin/signup' element={<AdminSignup />} />
+
+
       </Routes>
 
 
